@@ -1,0 +1,60 @@
+.natural-page {
+    min-height: 100vh;
+    background: var(--bg-gradient, linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%));
+    padding-top: 70px;
+    transition: background 0.3s ease;
+}
+
+.orchid-card-bootstrap {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    background: var(--card-bg, white);
+}
+
+.orchid-card-bootstrap:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .natural-page {
+    --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --card-bg: #3d3d3d;
+}
+
+[data-theme="dark"] .orchid-card-bootstrap {
+    background: var(--card-bg) !important;
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .orchid-card-bootstrap .card-title {
+    color: #66bb6a !important;
+}
+
+[data-theme="dark"] .orchid-card-bootstrap .text-muted {
+    color: #b0b0b0 !important;
+}
+
+[data-theme="dark"] .modal-content {
+    background: #3d3d3d !important;
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .modal-header {
+    border-bottom: 1px solid #555 !important;
+}
+
+[data-theme="dark"] .modal-footer {
+    border-top: 1px solid #555 !important;
+}
+
+[data-theme="dark"] .text-success {
+    color: #66bb6a !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .natural-page {
+        padding-top: 60px;
+    }
+}

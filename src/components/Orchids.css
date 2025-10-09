@@ -1,0 +1,76 @@
+.orchids-container {
+    min-height: 100vh;
+    background: var(--bg-gradient, linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%));
+    padding-top: 70px;
+    transition: background 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .orchids-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .orchids-container {
+        padding: 15px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .orchids-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .orchids-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .orchids-container {
+    --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --title-gradient: linear-gradient(135deg, #66bb6a, #81c784, #a5d6a7);
+    --text-secondary: #b0b0b0;
+}
+
+[data-theme="dark"] .text-success {
+    color: #66bb6a !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: #b0b0b0 !important;
+}
+
+[data-theme="dark"] .nav-tabs .nav-link {
+    color: #b0b0b0 !important;
+    background: #4a4a4a !important;
+    border-color: #555 !important;
+}
+
+[data-theme="dark"] .nav-tabs .nav-link.active {
+    color: #66bb6a !important;
+    background: #1a1a1a !important;
+    border-color: #66bb6a #66bb6a #1a1a1a !important;
+}
