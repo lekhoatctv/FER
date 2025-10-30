@@ -1,0 +1,158 @@
+@import './variables';
+@import './mixins';
+
+.intro-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, $light-bg 0%, $white 100%);
+    padding: $spacing-lg;
+
+    .intro-container {
+        max-width: 900px;
+        margin: 0 auto;
+
+        .intro-header {
+            text-align: center;
+            margin-bottom: $spacing-xl;
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                border: 4px solid $primary-color;
+                margin-bottom: $spacing-md;
+                object-fit: cover;
+                @include card-shadow;
+            }
+
+            h1 {
+                @include responsive-text(2.5rem);
+                color: $text-color;
+                margin-bottom: $spacing-sm;
+                font-weight: bold;
+            }
+
+            .subtitle {
+                @include responsive-text(1.2rem);
+                color: lighten($text-color, 20%);
+                margin-bottom: $spacing-md;
+            }
+
+            .social-links {
+                @include flex-center;
+                gap: $spacing-sm;
+
+                a {
+                    padding: $spacing-xs $spacing-sm;
+                    background: $primary-color;
+                    color: $white;
+                    text-decoration: none;
+                    border-radius: $border-radius;
+                    transition: all $transition-speed ease;
+
+                    &:hover {
+                        background: darken($primary-color, 10%);
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: $spacing-lg;
+            margin-bottom: $spacing-xl;
+
+            .info-card {
+                background: $white;
+                padding: $spacing-lg;
+                border-radius: $border-radius-lg;
+                @include card-shadow;
+
+                h3 {
+                    @include responsive-text(1.5rem);
+                    color: $secondary-color;
+                    margin-bottom: $spacing-md;
+                    border-bottom: 2px solid $primary-color;
+                    padding-bottom: $spacing-sm;
+                }
+
+                p,
+                ul {
+                    color: $text-color;
+                    line-height: 1.6;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        padding: $spacing-xs 0;
+                        padding-left: $spacing-md;
+                        position: relative;
+
+                        &:before {
+                            content: "✓";
+                            color: $primary-color;
+                            font-weight: bold;
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .skills-section {
+            background: $white;
+            padding: $spacing-lg;
+            border-radius: $border-radius-lg;
+            @include card-shadow;
+
+            h2 {
+                @include responsive-text(2rem);
+                color: $text-color;
+                text-align: center;
+                margin-bottom: $spacing-lg;
+            }
+
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: $spacing-md;
+
+                .skill-item {
+                    @include flex-center;
+                    padding: $spacing-md;
+                    background: linear-gradient(135deg, $primary-color, $secondary-color);
+                    color: $white;
+                    border-radius: $border-radius;
+                    font-weight: 500;
+                    transition: all $transition-speed ease;
+
+                    &:hover {
+                        transform: scale(1.1) rotate(2deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .intro-page {
+        padding: $spacing-sm;
+
+        .intro-container {
+            .intro-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-section .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+    }
+}
