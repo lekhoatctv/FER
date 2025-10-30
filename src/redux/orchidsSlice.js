@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://6729bb776d5fa4901b6e0a77.mockapi.io/orchids';
+const API_URL = 'https://69039d30d0f10a340b2518ee.mockapi.io/Orchids';
 
 // Async thunks
 export const fetchOrchids = createAsyncThunk(

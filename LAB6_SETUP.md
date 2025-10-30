@@ -26,29 +26,48 @@ Open `src/redux/orchidsSlice.js` and update the API_URL with your MockAPI endpoi
 const API_URL = 'https://YOUR_PROJECT_ID.mockapi.io/orchids';
 ```
 
-## 🔐 Google OAuth Setup
+## � Firebase Authentication Setup
 
-### Step 1: Create Google OAuth Client ID
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select existing one
-3. Enable "Google+ API"
-4. Go to "Credentials" → "Create Credentials" → "OAuth client ID"
-5. Select "Web application"
-6. Add authorized JavaScript origins: `http://localhost:5173`
-7. Copy the Client ID
+### Step 1: Create Firebase Project
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Click "Add project"
+3. Name: `orchid-management`
+4. Disable Google Analytics
+5. Click "Create project"
 
-### Step 2: Update Google Client ID
-Open `src/main.jsx` and replace:
+### Step 2: Add Web App & Get Config
+1. Click **</>** icon (Web)
+2. App nickname: `Orchid App`
+3. Don't check "Firebase Hosting"
+4. Click "Register app"
+5. **Copy the firebaseConfig** object
+
+### Step 3: Enable Google Sign-in
+1. Go to **Authentication** → **Get started**
+2. Click **Sign-in method** tab
+3. Click **Google** → Enable → Save
+
+### Step 4: Update Firebase Config
+Open `src/config/firebase.js` and replace firebaseConfig with your own:
 ```javascript
-const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID_HERE'
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  // ... paste your config here
+};
 ```
+
+**📖 Detailed Guide:** See `FIREBASE_QUICK_SETUP.md`
+
+**✅ No credit card required!**
 
 ## 📦 Features Implemented
 
 ✅ **Redux Toolkit** - State management
 ✅ **Formik & Yup** - Form handling and validation
 ✅ **Axios** - HTTP requests
-✅ **Google OAuth** - Authentication
+✅ **Firebase Authentication** - Google Sign-in (No credit card needed!)
 ✅ **CRUD Operations** - Create, Read, Update, Delete
 
 ## 🎯 Routes

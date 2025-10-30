@@ -1,10 +1,7 @@
-@import './variables';
-@import './mixins';
-
 .intro-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, $light-bg 0%, $white 100%);
-    padding: $spacing-lg;
+    background: #f5f5f5;
+    padding: 20px;
 
     .intro-container {
         max-width: 900px;
@@ -12,46 +9,46 @@
 
         .intro-header {
             text-align: center;
-            margin-bottom: $spacing-xl;
+            margin-bottom: 30px;
 
             .profile-image {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                border: 4px solid $primary-color;
-                margin-bottom: $spacing-md;
+                width: 120px;
+                height: 120px;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                margin-bottom: 15px;
                 object-fit: cover;
-                @include card-shadow;
             }
 
             h1 {
-                @include responsive-text(2.5rem);
-                color: $text-color;
-                margin-bottom: $spacing-sm;
-                font-weight: bold;
+                font-size: 1.8rem;
+                color: #333;
+                margin-bottom: 10px;
+                font-weight: 600;
             }
 
             .subtitle {
-                @include responsive-text(1.2rem);
-                color: lighten($text-color, 20%);
-                margin-bottom: $spacing-md;
+                font-size: 1rem;
+                color: #666;
+                margin-bottom: 15px;
             }
 
             .social-links {
-                @include flex-center;
-                gap: $spacing-sm;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
 
                 a {
-                    padding: $spacing-xs $spacing-sm;
-                    background: $primary-color;
-                    color: $white;
+                    padding: 6px 12px;
+                    background: #333;
+                    color: white;
                     text-decoration: none;
-                    border-radius: $border-radius;
-                    transition: all $transition-speed ease;
+                    border-radius: 4px;
+                    font-size: 14px;
 
                     &:hover {
-                        background: darken($primary-color, 10%);
-                        transform: scale(1.05);
+                        background: #555;
                     }
                 }
             }
@@ -60,27 +57,28 @@
         .intro-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: $spacing-lg;
-            margin-bottom: $spacing-xl;
+            gap: 15px;
+            margin-bottom: 30px;
 
             .info-card {
-                background: $white;
-                padding: $spacing-lg;
-                border-radius: $border-radius-lg;
-                @include card-shadow;
+                background: white;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
 
                 h3 {
-                    @include responsive-text(1.5rem);
-                    color: $secondary-color;
-                    margin-bottom: $spacing-md;
-                    border-bottom: 2px solid $primary-color;
-                    padding-bottom: $spacing-sm;
+                    font-size: 1.2rem;
+                    color: #333;
+                    margin-bottom: 12px;
+                    border-bottom: 1px solid #ddd;
+                    padding-bottom: 8px;
                 }
 
                 p,
                 ul {
-                    color: $text-color;
+                    color: #666;
                     line-height: 1.6;
+                    font-size: 14px;
                 }
 
                 ul {
@@ -88,16 +86,15 @@
                     padding: 0;
 
                     li {
-                        padding: $spacing-xs 0;
-                        padding-left: $spacing-md;
+                        padding: 5px 0;
+                        padding-left: 20px;
                         position: relative;
 
                         &:before {
-                            content: "✓";
-                            color: $primary-color;
-                            font-weight: bold;
+                            content: "•";
+                            color: #333;
                             position: absolute;
-                            left: 0;
+                            left: 5px;
                         }
                     }
                 }
@@ -105,34 +102,35 @@
         }
 
         .skills-section {
-            background: $white;
-            padding: $spacing-lg;
-            border-radius: $border-radius-lg;
-            @include card-shadow;
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
 
             h2 {
-                @include responsive-text(2rem);
-                color: $text-color;
+                font-size: 1.5rem;
+                color: #333;
                 text-align: center;
-                margin-bottom: $spacing-lg;
+                margin-bottom: 20px;
             }
 
             .skills-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: $spacing-md;
+                gap: 10px;
 
                 .skill-item {
-                    @include flex-center;
-                    padding: $spacing-md;
-                    background: linear-gradient(135deg, $primary-color, $secondary-color);
-                    color: $white;
-                    border-radius: $border-radius;
-                    font-weight: 500;
-                    transition: all $transition-speed ease;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    background: #f0f0f0;
+                    color: #333;
+                    border-radius: 4px;
+                    font-size: 13px;
 
                     &:hover {
-                        transform: scale(1.1) rotate(2deg);
+                        background: #e5e5e5;
                     }
                 }
             }
@@ -143,7 +141,7 @@
 // Responsive design
 @media (max-width: 768px) {
     .intro-page {
-        padding: $spacing-sm;
+        padding: 15px;
 
         .intro-container {
             .intro-content {

@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard'
 import OrchidForm from './components/OrchidForm'
 import DataSeeder from './components/DataSeeder'
 import Lab6Guide from './components/Lab6Guide'
+import TestAPI from './components/TestAPI'
 import { ThemeProvider } from './contexts/ThemeContext'
 import './App.css'
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/edit/:id" element={<OrchidForm />} />
             <Route path="/seeder" element={<DataSeeder />} />
             <Route path="/lab6" element={<Lab6Guide />} />
+            <Route path="/test-api" element={<TestAPI />} />
           </Routes>
         </div>
       </Router>

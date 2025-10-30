@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navigation from './Navigation';
 import './DataSeeder.css';
 
-const API_URL = 'https://6729bb776d5fa4901b6e0a77.mockapi.io/orchids';
+const API_URL = 'https://69039d30d0f10a340b2518ee.mockapi.io/Orchids';
 
 const orchidsData = [
     {
